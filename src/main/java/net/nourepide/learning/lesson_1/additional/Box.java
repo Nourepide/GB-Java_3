@@ -1,6 +1,5 @@
 package net.nourepide.learning.lesson_1.additional;
 
-
 import net.nourepide.learning.lesson_1.additional.fruit.Apple;
 import net.nourepide.learning.lesson_1.additional.fruit.Fruit;
 import net.nourepide.learning.lesson_1.additional.fruit.Orange;
