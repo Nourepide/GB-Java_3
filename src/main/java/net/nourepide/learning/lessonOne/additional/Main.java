@@ -1,17 +1,17 @@
-package net.nourepide.learning.lesson_1.additional;
+package net.nourepide.learning.lessonOne.additional;
 
-import net.nourepide.learning.lesson_1.additional.fruit.Apple;
-import net.nourepide.learning.lesson_1.additional.fruit.Orange;
+import net.nourepide.learning.lessonOne.additional.fruit.Apple;
+import net.nourepide.learning.lessonOne.additional.fruit.Orange;
 
 public class Main {
     public static void main(String[] args) {
-        Box<Apple> boxApples = new Box<>(
+        final Box<Apple> boxApples = new Box<>(
                 new Apple(),
                 new Apple(),
                 new Apple()
         );
 
-        Box<Orange> boxOranges = new Box<>(
+        final Box<Orange> boxOranges = new Box<>(
                 new Orange(),
                 new Orange(),
                 new Orange()
@@ -31,7 +31,7 @@ public class Main {
 
 
         // Fill
-        Box<Apple> newBoxApples = new Box<>(
+        final Box<Apple> newBoxApples = new Box<>(
                 new Apple(),
                 new Apple()
         );

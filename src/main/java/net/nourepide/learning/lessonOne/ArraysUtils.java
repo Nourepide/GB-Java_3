@@ -1,4 +1,4 @@
-package net.nourepide.learning.lesson_1;
+package net.nourepide.learning.lessonOne;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,8 +21,8 @@ public class ArraysUtils {
             return;
         }
 
-        T valueOne = array[indexOne];
-        T valueTwo = array[indexTwo];
+        final T valueOne = array[indexOne];
+        final T valueTwo = array[indexTwo];
 
         array[indexOne] = valueTwo;
         array[indexTwo] = valueOne;
