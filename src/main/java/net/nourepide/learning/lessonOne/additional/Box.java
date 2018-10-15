@@ -1,12 +1,12 @@
 package net.nourepide.learning.lessonOne.additional;
 
 
+import net.nourepide.learning.lessonOne.ArraysUtils;
 import net.nourepide.learning.lessonOne.additional.fruit.Apple;
 import net.nourepide.learning.lessonOne.additional.fruit.Fruit;
 import net.nourepide.learning.lessonOne.additional.fruit.Orange;
-import net.nourepide.learning.lessonOne.ArraysUtils;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class Box<T extends Fruit> {
     private ArrayList<T> storage;
