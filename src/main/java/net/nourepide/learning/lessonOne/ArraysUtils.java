@@ -29,7 +29,7 @@ public class ArraysUtils {
         array[indexTwo] = valueOne;
     }
 
-    public static <T> ArrayList<T> arrayConverter(T[] array) {
+    public static <T> List<T> arrayConverter(T[] array) {
         // * Click * - Nice
         return new ArrayList<>(Arrays.asList(array));
     }

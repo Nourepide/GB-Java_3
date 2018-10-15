@@ -9,7 +9,7 @@ import net.nourepide.learning.lessonOne.additional.fruit.Orange;
 import java.util.List;
 
 class Box<T extends Fruit> {
-    private ArrayList<T> storage;
+    private List<T> storage;
 
     @SafeVarargs
     Box(T... storage) {

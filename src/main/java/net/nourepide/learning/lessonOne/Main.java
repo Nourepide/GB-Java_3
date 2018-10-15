@@ -11,7 +11,7 @@ public class Main {
         System.out.println(Arrays.toString(intArray));
 
         // Task 2
-        final ArrayList<Integer> intArrayList = ArraysUtils.arrayConverter(intArray);
+        final List<Integer> intArrayList = ArraysUtils.arrayConverter(intArray);
         System.out.println(Arrays.toString(intArrayList.toArray()));
     }
 }
