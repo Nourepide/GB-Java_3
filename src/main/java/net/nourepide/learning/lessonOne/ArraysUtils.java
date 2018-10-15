@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArraysUtils {
-    static <T> void swap(T[] array, int indexOne, int indexTwo){
+    static <T> void swap(T[] array, int indexOne, int indexTwo) {
         // Yes ... without try/catch
         if (indexOne == indexTwo) {
             System.err.println("Index can't be identical");
