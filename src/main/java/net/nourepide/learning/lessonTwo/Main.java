@@ -1,27 +1,44 @@
 package net.nourepide.learning.lessonTwo;
 
-
 import net.nourepide.learning.lessonTwo.enity.Project;
 import net.nourepide.learning.lessonTwo.service.ProjectService;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    // Соединение с БД
-    // Запрос логина и пароля
     public static void main(String[] args) throws IOException {
+        // Connection
         final ProjectService projectService = new ProjectService();
 
-//        Pair<String, String> user = getUser();
-//        System.out.println(user.getFirst());
-//        System.out.println(user.getSecond());
+        while (true) {
+            // Get users
+            List<Project> users = projectService.findAll();
+
+            // Get name and password
+            User<String, String> user = getUser();
+
+            boolean isSuccessful = false;
+
+            for (Project project : users) {
+                if (user.getName().equals(project.getName())
+                        && user.getPassword().equals(project.getPassword())) {
+                    isSuccessful = true;
+                    break;
+                }
+            }
+
+            if (isSuccessful) {
+                System.out.println("User found");
+                break;
+            } else {
+                System.out.println("User not found");
+            }
+        }
     }
 
-    // Парсинг
-    // Проверка и вывод в чат
-
-    private static Pair<String, String> getUser() {
+    private static User<String, String> getUser() {
         final String name;
         final String password;
 
@@ -33,6 +50,6 @@ public class Main {
         System.out.println("Please, enter your password");
         password = input.next();
 
-        return new Pair<>(name, password);
+        return new User<>(name, password);
     }
 }
