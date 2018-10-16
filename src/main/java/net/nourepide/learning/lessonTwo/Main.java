@@ -12,6 +12,9 @@ public class Main {
         // Connection
         final ProjectService projectService = new ProjectService();
 
+        // For name change
+        Project userProject = null;
+
         while (true) {
             // Get users
             List<Project> users = projectService.findAll();
@@ -25,6 +28,7 @@ public class Main {
                 if (user.getName().equals(project.getName())
                         && user.getPassword().equals(project.getPassword())) {
                     isSuccessful = true;
+                    userProject = project;
                     break;
                 }
             }
@@ -34,8 +38,16 @@ public class Main {
                 break;
             } else {
                 System.out.println("User not found");
+                // New iteration
             }
         }
+
+        // Change name
+        String name = getNewName();
+        userProject.setName(name);
+
+        // Push
+        projectService.update(userProject);
     }
 
     private static User<String, String> getUser() {
@@ -51,5 +63,10 @@ public class Main {
         password = input.next();
 
         return new User<>(name, password);
+    }
+
+    private static String getNewName() {
+        System.out.println("Please, enter your new name");
+        return new Scanner(System.in).next();
     }
 }
