@@ -21,7 +21,8 @@ public interface ProjectRepository {
     @Insert("INSERT INTO `users` (`id`, `name`, `password`) VALUES (#{id}, #{name}, #{password})")
     void insert(Project project);
 
-    @Update("UPDATE `users` (`name`, `password`) SET `name` = #{name}, `password` = #{password} WHERE `id` = #{id}")
+    // Crash - "UPDATE `users` (`name`, `password`) ...
+    @Update("UPDATE `users` SET `name` = #{name}, `password` = #{password} WHERE `id` = #{id}")
     void update(Project project);
 
     @Delete("DELETE FROM `users`")
