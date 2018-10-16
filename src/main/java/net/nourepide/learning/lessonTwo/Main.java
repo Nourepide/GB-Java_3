@@ -24,9 +24,10 @@ public class Main {
 
             boolean isSuccessful = false;
 
-            for (Project project : users) {
-                if (user.getName().equals(project.getName())
-                        && user.getPassword().equals(project.getPassword())) {
+            for (final Project project : users) {
+                if (user.getName().equals(project.getName()) &&
+                        user.getPassword().equals(project.getPassword())) {
+
                     isSuccessful = true;
                     userProject = project;
                     break;
@@ -35,6 +36,8 @@ public class Main {
 
             if (isSuccessful) {
                 System.out.println("User found");
+
+                // Exit from while
                 break;
             } else {
                 System.out.println("User not found");
