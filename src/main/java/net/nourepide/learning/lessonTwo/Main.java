@@ -17,10 +17,10 @@ public class Main {
 
         while (true) {
             // Get users
-            List<Project> users = projectService.findAll();
+            final List<Project> users = projectService.findAll();
 
             // Get name and password
-            User<String, String> user = getUser();
+            final User<String, String> user = getUser();
 
             boolean isSuccessful = false;
 
@@ -43,7 +43,7 @@ public class Main {
         }
 
         // Change name
-        String name = getNewName();
+        final String name = getNewName();
         userProject.setName(name);
 
         // Push
