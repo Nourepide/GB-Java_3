@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Connection
         final UserService userService = new UserService();
-        Users user = authorization(userService);
+        final Users user = authorization(userService);
 
         if (user != null) {
             System.out.println("User found");
