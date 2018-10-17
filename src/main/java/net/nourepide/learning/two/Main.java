@@ -49,7 +49,6 @@ public class Main {
         // Get name and password
         final Data<String, String> user = getUser();
 
-
         for (final Users project : users) {
             boolean equalsName = user.getFirst().equals(project.getName());
             boolean equalsPassword = user.getSecond().equals(project.getPassword());
