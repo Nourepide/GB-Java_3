@@ -1,4 +1,4 @@
-package net.nourepide.learning.lessonTwo.service;
+package net.nourepide.learning.two.service;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

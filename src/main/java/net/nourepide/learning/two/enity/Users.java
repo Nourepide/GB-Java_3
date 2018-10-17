@@ -1,4 +1,4 @@
-package net.nourepide.learning.lessonTwo.enity;
+package net.nourepide.learning.two.enity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Project {
+public class Users {
     private String id;
     private String name;
     private String password;
