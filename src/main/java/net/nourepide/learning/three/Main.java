@@ -60,7 +60,7 @@ public class Main {
 
     // Write message to chat and file
     private static void writeMessage() throws IOException {
-        String message = getLine();
+        final String message = getLine();
 
         // Stop application if user wrote exit
         if (message.equals("exit")) {
