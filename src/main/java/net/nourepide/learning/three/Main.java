@@ -31,7 +31,7 @@ public class Main {
         history = Files.readString(Paths.get(ADDRESS));
 
         // Reverse and enter to the chat first 100 lines
-        List<String> strings = Files.readAllLines(Paths.get(ADDRESS));
+        final List<String> strings = Files.readAllLines(Paths.get(ADDRESS));
         Collections.reverse(strings);
 
         int iterator = (strings.size() < 100) ? strings.size() -1 : 100;
@@ -56,8 +56,7 @@ public class Main {
     }
 
     private static void writeMessageToChat(String name, String message) {
-        String concatenation = name + ": " + message;
-        System.out.println(concatenation);
+        System.out.println(name + ": " + message);
     }
 
     private static void writeMessageToFile(String name, String message) throws IOException {
