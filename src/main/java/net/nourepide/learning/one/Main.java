@@ -1,4 +1,4 @@
-package net.nourepide.learning.lessonOne;
+package net.nourepide.learning.one;
 
 import java.util.Arrays;
 import java.util.List;

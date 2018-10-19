@@ -1,7 +1,7 @@
-package net.nourepide.learning.lessonOne.additional;
+package net.nourepide.learning.one.additional;
 
-import net.nourepide.learning.lessonOne.additional.fruit.Apple;
-import net.nourepide.learning.lessonOne.additional.fruit.Orange;
+import net.nourepide.learning.one.additional.fruit.Apple;
+import net.nourepide.learning.one.additional.fruit.Orange;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,10 +1,10 @@
-package net.nourepide.learning.lessonOne.additional;
+package net.nourepide.learning.one.additional;
 
 
-import net.nourepide.learning.lessonOne.ArraysUtils;
-import net.nourepide.learning.lessonOne.additional.fruit.Apple;
-import net.nourepide.learning.lessonOne.additional.fruit.Fruit;
-import net.nourepide.learning.lessonOne.additional.fruit.Orange;
+import net.nourepide.learning.one.ArraysUtils;
+import net.nourepide.learning.one.additional.fruit.Apple;
+import net.nourepide.learning.one.additional.fruit.Fruit;
+import net.nourepide.learning.one.additional.fruit.Orange;
 
 import java.util.List;
 
