@@ -3,7 +3,7 @@ package net.nourepide.learning.one;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class Application {
     public static void main(String[] args) {
         // Task 1
         final Integer[] intArray = {0, 1};

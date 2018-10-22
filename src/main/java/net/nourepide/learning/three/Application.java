@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Main {
+public class Application {
     private static final Scanner scanner = new Scanner(System.in);
     private static final String ADDRESS = "/home/username/file.txt";
 
