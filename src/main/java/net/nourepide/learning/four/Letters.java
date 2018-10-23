@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 import static net.nourepide.learning.four.State.*;
 
-public class ABC {
+public class Letters {
     /**
      * Print value in input and waiting for notifyAll
      * Range of cycle by default is five
@@ -54,20 +54,20 @@ public class ABC {
         }
     }
 
-    public static class A extends Letter {
-        public A(Application application) {
+    public static class StateA extends Letter {
+        public StateA(Application application) {
             super(application, A_REFERENCE, B_REFERENCE);
         }
     }
 
-    public static class B extends Letter {
-        public B(Application application) {
+    public static class StateB extends Letter {
+        public StateB(Application application) {
             super(application, B_REFERENCE, C_REFERENCE);
         }
     }
 
-    public static class C extends Letter {
-        public C(Application application) {
+    public static class StateC extends Letter {
+        public StateC(Application application) {
             super(application, C_REFERENCE, A_REFERENCE);
         }
     }

@@ -25,9 +25,9 @@ public class Application {
         final Application application = new Application();
         final ExecutorService executorService = Executors.newCachedThreadPool();
 
-        executorService.execute(new ABC.A(application));
-        executorService.execute(new ABC.B(application));
-        executorService.execute(new ABC.C(application));
+        executorService.execute(new Letters.StateA(application));
+        executorService.execute(new Letters.StateB(application));
+        executorService.execute(new Letters.StateC(application));
 
         executorService.shutdown();
     }
