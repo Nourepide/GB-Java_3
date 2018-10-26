@@ -4,8 +4,8 @@ import net.nourepide.learning.five.Application;
 import net.nourepide.learning.five.Car;
 
 public abstract class Stage {
-    protected int length;
-    private String description;
+    private final int length;
+    private final String description;
 
     public Stage(String type, int length) {
         this.length = length;
