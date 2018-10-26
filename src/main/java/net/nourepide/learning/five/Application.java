@@ -13,7 +13,7 @@ public class Application {
     public static final CountDownLatch countDownLatchEnd = new CountDownLatch(CARS_COUNT);
 
     private static final Car[] cars = new Car[CARS_COUNT];
-    private static final Race race = new Race(new Road(60), new Tunnel());
+    private static final Race race = new Race(new Road(60), new Tunnel(80));
 
     public static void main(String[] args) throws InterruptedException {
         Utils.printRushReady();

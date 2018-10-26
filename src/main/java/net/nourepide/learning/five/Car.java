@@ -55,6 +55,6 @@ public class Car implements Runnable {
 
         IntStream
                 .range(start, end)
-                .forEach(value -> race.getStages().get(value).go(this));
+                .forEach(value -> race.getStages().get(value).enter(this));
     }
 }

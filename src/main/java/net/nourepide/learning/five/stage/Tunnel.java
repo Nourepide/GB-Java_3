@@ -5,21 +5,18 @@ import net.nourepide.learning.five.Car;
 import net.nourepide.learning.five.Utils;
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Tunnel extends Stage {
-    ReentrantLock reentrantLock;
     Semaphore semaphore;
 
-    public Tunnel() {
-        this.reentrantLock = new ReentrantLock();
+    public Tunnel(int length) {
+        super("Тоннель", length);
+
         this.semaphore = new Semaphore(Application.CARS_COUNT / 2);
-        this.length = 80;
-        this.setDescription("Тоннель " + length + " метров");
     }
 
     @Override
-    public void go(Car car) {
+    public void enter(Car car) {
         Utils.printStageReady(car.getName(), getDescription());
 
         try {
@@ -29,7 +26,7 @@ public class Tunnel extends Stage {
         }
 
         Utils.printStageStart(car.getName(), getDescription());
-        Utils.sleep(length / car.getSpeed() * 1000);
+        Utils.sleep(getLength() / car.getSpeed() * 1000);
         Utils.printStageEnd(car.getName(), getDescription());
 
         semaphore.release();

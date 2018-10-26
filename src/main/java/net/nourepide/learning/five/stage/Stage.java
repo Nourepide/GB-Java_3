@@ -7,15 +7,20 @@ public abstract class Stage {
     protected int length;
     private String description;
 
+    public Stage(String type, int length) {
+        this.length = length;
+        this.description = type + " " + length + " метров";
+    }
+
+    public int getLength() {
+        return length;
+    }
+
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public abstract void go(Car car);
+    public abstract void enter(Car car);
 
     protected void lastStage() {
         Application.countDownLatchEnd.countDown();
