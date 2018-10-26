@@ -7,7 +7,7 @@ import net.nourepide.learning.five.Utils;
 import java.util.concurrent.Semaphore;
 
 public class Tunnel extends Stage {
-    Semaphore semaphore;
+    private final Semaphore semaphore;
 
     public Tunnel(int length) {
         super("Тоннель", length);
