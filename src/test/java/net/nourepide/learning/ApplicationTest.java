@@ -1,44 +1,36 @@
 package net.nourepide.learning;
 
-import net.nourepide.learning.six.Application;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static net.nourepide.learning.six.Application.changeArray;
+import static net.nourepide.learning.six.Application.checkArray;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationTest {
 
     @Test
-    public void checkArray() {
-        Assertions.assertTrue(
-                Application.checkArray(new int[]{1, 4}, 1, 4)
-        );
+    public void checkArrayTest() {
+        assertTrue(checkArray(new int[]{1, 4}, 1, 4));
 
-        Assertions.assertFalse(
-                Application.checkArray(new int[]{4, 4}, 1, 4)
-        );
+        assertFalse(checkArray(new int[]{4, 4}, 1, 4));
 
-        Assertions.assertFalse(
-                Application.checkArray(new int[]{1, 1}, 1, 4)
-        );
+        assertFalse(checkArray(new int[]{1, 1}, 1, 4));
 
-        Assertions.assertFalse(
-                Application.checkArray(new int[]{0, 0}, 1, 4)
-        );
+        assertFalse(checkArray(new int[]{0, 0}, 1, 4));
     }
 
     @Test()
-    public void changeArray() {
-        Assertions.assertThrows(RuntimeException.class, () ->
-                Application.changeArray(new int[]{}, 4)
-        );
+    public void changeArrayTest() {
+        assertThrows(RuntimeException.class, () -> changeArray(new int[]{}, 4));
 
-        Assertions.assertThrows(RuntimeException.class, () -> {
+        assertThrows(RuntimeException.class, () -> {
             int[] array = {1, 2, 0, 0, 2, 3, 0, 1, 7};
-            Application.changeArray(array, 4);
+            changeArray(array, 4);
         });
 
         int[] array = {1, 2, 4, 4, 2, 3, 4, 1, 7};
-        int[] result = Application.changeArray(array, 4);
+        int[] result = changeArray(array, 4);
 
-        Assertions.assertArrayEquals(new int[]{1, 7}, result);
+        assertArrayEquals(new int[]{1, 7}, result);
     }
 }
