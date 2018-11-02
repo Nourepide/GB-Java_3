@@ -21,9 +21,9 @@ public class Handler {
      *
      * @param valueClass Testing class
      */
-    public static <T> void start(Class<T> valueClass) throws ReflectiveOperationException {
-        Data annotation = getAnnotation(valueClass.getMethods());
-        Object object = valueClass.getConstructor().newInstance();
+    public static <T> void start(final Class<T> valueClass) throws ReflectiveOperationException {
+        final Data annotation = getAnnotation(valueClass.getMethods());
+        final Object object = valueClass.getConstructor().newInstance();
 
         invokeAll(annotation, object);
     }
@@ -36,14 +36,14 @@ public class Handler {
      * @see AfterSuit
      * @see Test
      */
-    private static Data getAnnotation(Method... methods) {
+    private static Data getAnnotation(final Method... methods) {
 
         Method beforeSuit = null;
         Method afterSuit = null;
         final List<Method> tests = new ArrayList<>();
 
-        for (Method method : methods) {
-            for (Annotation annotation : method.getDeclaredAnnotations()) {
+        for (final Method method : methods) {
+            for (final Annotation annotation : method.getDeclaredAnnotations()) {
 
                 final boolean checkBeforeSuit = checkAnnotation(annotation, BeforeSuit.class);
                 final boolean checkAfterSuit = checkAnnotation(annotation, AfterSuit.class);
@@ -72,7 +72,7 @@ public class Handler {
      * @param annotation         gets annotation and looking for match in contains name
      * @param annotatedInterface class for matching
      */
-    private static boolean checkAnnotation(Annotation annotation, Class annotatedInterface) {
+    private static boolean checkAnnotation(final Annotation annotation, final Class annotatedInterface) {
         return annotation.toString().contains(annotatedInterface.getName());
     }
 
@@ -82,12 +82,12 @@ public class Handler {
      * @param annotation entity Data class contains all method after matching
      * @param object     object for context invoking
      */
-    private static void invokeAll(Data annotation, Object object) {
+    private static void invokeAll(final Data annotation, final Object object) {
         simplifyInvoke(annotation.getBeforeSuit(), object);
 
         sortTests(annotation.getTests());
 
-        for (Method test : annotation.getTests()) {
+        for (final Method test : annotation.getTests()) {
             simplifyInvoke(test, object);
         }
 
@@ -97,10 +97,10 @@ public class Handler {
     /**
      * Sorting method annotated Test with priority comparing
      */
-    private static void sortTests(List<Method> tests) {
+    private static void sortTests(final List<Method> tests) {
         tests.sort((methodOne, methodTwo) -> {
-            int valueOne = methodOne.getAnnotation(Test.class).priority();
-            int valueTwo = methodTwo.getAnnotation(Test.class).priority();
+            final int valueOne = methodOne.getAnnotation(Test.class).priority();
+            final int valueTwo = methodTwo.getAnnotation(Test.class).priority();
 
             return Integer.compare(valueOne, valueTwo);
         });
@@ -109,7 +109,7 @@ public class Handler {
     /**
      * Wrapper for simplify invoking method
      */
-    private static void simplifyInvoke(Method method, Object object) {
+    private static void simplifyInvoke(final Method method, final Object object) {
         try {
             if (method != null) method.invoke(object);
         } catch (IllegalAccessException | InvocationTargetException e) {
