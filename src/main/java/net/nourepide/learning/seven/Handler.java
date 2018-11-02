@@ -111,7 +111,7 @@ public class Handler {
      */
     private static void simplifyInvoke(Method method, Object object) {
         try {
-            method.invoke(object);
+            if (method != null) method.invoke(object);
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {
