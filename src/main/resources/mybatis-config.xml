@@ -13,6 +13,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="net.nourepide.learning.two.repository.UsersRepository"/>
+        <mapper class="net.nourepide.learning.database.repository.UsersRepository"/>
     </mappers>
 </configuration>
